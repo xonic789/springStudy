@@ -60,15 +60,8 @@ public class EmpDao extends JdbcDaoSupport {
 
 	public void insertOne(String name, String sub, int pay) throws SQLException {
 		String sql = "insert into emp (name,sub,nalja,pay) values (?,?,now(),?)";
-		try(
-				Connection conn =getConnection();
-				PreparedStatement pstmt = conn.prepareStatement(sql);
-				){
-			pstmt.setString(1, name);
-			pstmt.setString(2, sub);
-			pstmt.setInt(3, pay);
-			pstmt.executeUpdate();
-		}
+		Object[] params = new Object[] {name,sub,pay};
+		getJdbcTemplate().update(sql, params);
 		
 	}
 
