@@ -86,18 +86,7 @@ public class EmpDao extends JdbcDaoSupport {
 
 	public int updateOne(int sabun, String name, String sub, int pay) throws SQLException {
 		String sql = "update emp set name=?,sub=?,pay=? where sabun=?";
-		try(
-				Connection conn=getConnection();
-				PreparedStatement pstmt = conn.prepareStatement(sql);
-				
-				){
-			pstmt.setString(1, name);
-			pstmt.setString(2, sub);
-			pstmt.setInt(3, pay);
-			pstmt.setInt(4, sabun);
-			return pstmt.executeUpdate();
-		}
-		
+		return getJdbcTemplate().update(sql,new Object[] {name,sub,pay,sabun});
 		
 	}
 	
