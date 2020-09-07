@@ -5,11 +5,19 @@
 	
 	<!-- 의존 주입 DI(Dependency Injection) -->
 	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.mariadb.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3307/xe"></property>
+		<property name="username" value="scott"></property>
+		<property name="password" value="tiger"></property>
+	</bean>
+	
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
 	<bean id="emp" class="com.bit.framework.emp.model.EmpDao">
-		<constructor-arg value="org.mariadb.jdbc.Driver"></constructor-arg>
-		<constructor-arg value="jdbc:mysql://localhost:3307/xe"></constructor-arg>
-		<constructor-arg value="scott"></constructor-arg>
-		<constructor-arg value="tiger"></constructor-arg>
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
 	</bean>
 	 
 	<!-- hendlermapping -->
