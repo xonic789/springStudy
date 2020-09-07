@@ -14,7 +14,7 @@
 	<script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<script type="text/javascript">
-	
+		$('table tr>td').first().siblings().wrap($('table tr>td>a'));
 	</script>
 </head>
 <body>
@@ -46,11 +46,11 @@
   	 			</thead>
   	 			<c:forEach items="${alist }" var="bean">
   	 				<tr class="row">
-  	 					<td>${bean.sabun }</td>
-  	 					<td>${bean.sub }</td>
-  	 					<td>${bean.name }</td>
-  	 					<td>${bean.nalja }</td>
-  	 					<td>${bean.pay }</td>
+  	 					<td><a href="/spring02/emp/detail.bit?idx=${bean.sabun }">${bean.sabun }</a></td>
+  	 					<td>${bean.sub }</a></td>
+  	 					<td>${bean.name }</a></td>
+  	 					<td>${bean.nalja }</a></td>
+  	 					<td>${bean.pay }</a></td>
   	 				</tr>
   	 			</c:forEach>
   	 		</table>
