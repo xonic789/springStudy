@@ -11,6 +11,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 import com.bit.framework.emp.model.entity.EmpVo;
@@ -37,25 +38,16 @@ public class EmpDao extends JdbcDaoSupport {
 	
 	public List<EmpVo> selectAll() throws SQLException{
 		String sql="select * from emp";
-		List<EmpVo> list = new ArrayList<>();
 		
-		try(
-				Connection conn = getConnection();
-				PreparedStatement pstmt = conn.prepareStatement(sql);
-				ResultSet rs = pstmt.executeQuery();
-						
-				) {
-				while(rs.next()) {
-					list.add(new EmpVo(rs.getInt("sabun"), rs.getString("name"),
-							rs.getString("sub"),rs.getTimestamp("nalja") ,rs.getInt("pay")
-							));
-				}
-		}
-		finally {
+		return getJdbcTemplate().query(sql, new RowMapper() {
 			
-		}
-		
-		return list;
+			@Override
+			public Object mapRow(ResultSet rs, int rowNum) throws SQLException{
+				return new EmpVo(rs.getInt("sabun"),rs.getString("name"),
+						rs.getString("sub"),rs.getTimestamp("nalja") ,rs.getInt("pay")
+						);
+			}
+		});
 	}
 
 	public void insertOne(String name, String sub, int pay) throws SQLException {
