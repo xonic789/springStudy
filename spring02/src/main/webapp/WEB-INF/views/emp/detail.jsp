@@ -18,7 +18,7 @@
 			$('#content form').one('submit',function(){
 				$('form input').prop('readonly',false);
 				$('form input').first().prop('readonly',true);
-				
+				$('form').next().hide();
 				return false;
 				});
 		});
@@ -78,6 +78,7 @@
 			    </div>
 			  </div>
 			</form>
+			<a href="delete.bit?idx=${bean.sabun }" class="btn btn-danger" role="btn">삭 제</a>
   	 	</div>
   	 </div>
   	 <div id="footer" class="row">

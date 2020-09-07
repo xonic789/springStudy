@@ -74,5 +74,8 @@ public class EmpDao extends JdbcDaoSupport {
 		return getJdbcTemplate().update(sql,new Object[] {name,sub,pay,sabun});
 		
 	}
-	
+	public int deleteOne(int sabun) {
+		String sql="delete from emp where sabun=?";
+		return getJdbcTemplate().update(sql,new Object[] {sabun});
+	}
 }
