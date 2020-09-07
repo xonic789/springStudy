@@ -59,9 +59,9 @@ public class EmpDao extends JdbcDaoSupport {
 
 	public Object selectOne(int sabun) throws SQLException {
 		String sql = "select * from emp where sabun=?";
-		return getJdbcTemplate().queryForObject(sql,new Object[] {sabun}, new RowMapper<EmpVo>() {
+		return getJdbcTemplate().queryForObject(sql,new Object[] {sabun},new RowMapper<EmpVo>() {
 			@Override
-			public EmpVo mapRow(ResultSet rs, int rowNum) throws SQLException{
+			public EmpVo mapRow(ResultSet rs, int rowNum) throws SQLException {
 				return new EmpVo(rs.getInt("sabun"),rs.getString("name"),
 						rs.getString("sub"),rs.getTimestamp("nalja") ,rs.getInt("pay")
 						);
