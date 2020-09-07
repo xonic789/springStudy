@@ -3,11 +3,28 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
+	<!-- 의존 주입 DI(Dependency Injection) -->
+	
+	<bean id="emp" class="com.bit.framework.emp.model.EmpDao">
+		<constructor-arg value="org.mariadb.jdbc.Driver"></constructor-arg>
+		<constructor-arg value="jdbc:mysql://localhost:3307/xe"></constructor-arg>
+		<constructor-arg value="scott"></constructor-arg>
+		<constructor-arg value="tiger"></constructor-arg>
+	</bean>
+	 
 	<!-- hendlermapping -->
 	<bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>
 	
 	<bean name="/index.bit" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
 		<property name="viewName" value="index"></property>
+	</bean>
+	<bean name="/emp/list.bit" class="com.bit.framework.emp.controller.ListController">
+		<property name="dao">
+			<ref bean="emp"/>
+		</property>
+	</bean>
+	<bean name="/emp/add.bit" class="com.bit.framework.emp.controller.AddController">
+		<property name="dao" ref="emp"></property>
 	</bean>
 	
 	

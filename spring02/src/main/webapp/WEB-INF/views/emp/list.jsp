@@ -7,12 +7,12 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 	<style type="text/css">
 	
 	</style>
-	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 	
 	</script>
@@ -34,8 +34,27 @@
   	 </div>
   	 <div id="content" class="row">
   	 	<div class="com-md-12">
-  	 	<img alt="" src="Imgs/nature.jpg" class="img-rounded"/>
-  	 	
+  	 		<table class="table">
+  	 			<thead>
+  	 				<tr class="row">
+  	 					<th>사번</th>
+  	 					<th>제목</th>
+  	 					<th>이름</th>
+  	 					<th>날짜</th>
+  	 					<th>금액</th>
+  	 				</tr>
+  	 			</thead>
+  	 			<c:forEach items="${alist }" var="bean">
+  	 				<tr class="row">
+  	 					<td>${bean.sabun }</td>
+  	 					<td>${bean.sub }</td>
+  	 					<td>${bean.name }</td>
+  	 					<td>${bean.nalja }</td>
+  	 					<td>${bean.pay }</td>
+  	 				</tr>
+  	 			</c:forEach>
+  	 		</table>
+  	 		<a href="add.bit" class="btn btn-primary text-center" role="btn">입 력</a>
   	 	</div>
   	 </div>
   	 <div id="footer" class="row">

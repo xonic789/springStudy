@@ -7,12 +7,12 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 	<style type="text/css">
 	
 	</style>
-	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 	
 	</script>
@@ -34,8 +34,31 @@
   	 </div>
   	 <div id="content" class="row">
   	 	<div class="com-md-12">
-  	 	<img alt="" src="Imgs/nature.jpg" class="img-rounded"/>
-  	 	
+  	 		<form class="form-horizontal" method="post">
+			  <div class="form-group">
+			    <label for="sub" class="col-sm-2 control-label">sub</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="sub" id="sub" placeholder="제목 입력">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="name" class="col-sm-2 control-label">name</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="name" id="name" placeholder="이름 입력">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="pay" class="col-sm-2 control-label">pay</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="pay" id="pay" placeholder="금액 입력">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-default">입 력</button>
+			    </div>
+			  </div>
+			</form>
   	 	</div>
   	 </div>
   	 <div id="footer" class="row">
