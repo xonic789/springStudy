@@ -9,9 +9,16 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractCommandController;
 import org.springframework.web.servlet.mvc.AbstractController;
 
+import com.bit.framework.dept.model.DeptDao;
+import com.bit.framework.dept.model.entity.DeptVo;
+
 public class InsertController extends AbstractCommandController{
 	Logger log = Logger.getLogger(this.getClass());
+	DeptDao deptDao;
 	
+	public void setDeptDao(DeptDao deptDao) {
+		this.deptDao = deptDao;
+	}
 
 	@Override
 	protected ModelAndView handle(HttpServletRequest request, HttpServletResponse response, Object command,
@@ -19,8 +26,9 @@ public class InsertController extends AbstractCommandController{
 		String dname = request.getParameter("dname");
 		String loc = request.getParameter("loc");
 		
-		log.debug("dname:"+dname+",loc:"+loc);
 		
+		DeptVo bean =(DeptVo)(command);
+		deptDao.insertOne(bean);
 		return new ModelAndView("redirect:/dept/list.bit");
 	}
 

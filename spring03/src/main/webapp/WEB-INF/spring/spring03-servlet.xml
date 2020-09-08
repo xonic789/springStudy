@@ -26,6 +26,8 @@
 	</bean>
 	<bean id="deptInsert" class="com.bit.framework.dept.controller.InsertController">
 		<property name="commandClass" value="com.bit.framework.dept.model.entity.DeptVo"></property>
+		<property name="commandName" value="bean"></property>
+		<property name="deptDao" ref="deptDao"></property>
 	</bean>
 	<bean id="viewResolver" 
 	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
