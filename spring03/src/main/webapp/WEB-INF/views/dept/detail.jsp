@@ -36,24 +36,31 @@
       <div class="row">
          <div class="col-md-12" id="content">
          <div class="page-header">
-         <h1>INSERT PAGE<small>DEPT TABLE${fieldErros.dname }</small></h1>
+         <h1>INSERT PAGE<small>DEPT TABLE</small></h1>
          </div>
-         <form class="form-horizontal" action="insert.bit" method="post">
+         <form class="form-horizontal" action="update.bit" method="post">
+		  <div class="form-group">
+		    <label for="deptno" class="col-sm-2 control-label">deptno</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" name="deptno" id="deptno" value="${bean.deptno }" readonly>
+		    </div>
+		  </div>
 		  <div class="form-group">
 		    <label for="dname" class="col-sm-2 control-label">dname</label>
 		    <div class="col-sm-10">
-		      <input type="text" class="form-control" name="dname" id="dname" placeholder="이름">
+		      <input type="text" class="form-control" name="dname" id="dname" value="${bean.dname }">
 		    </div>
 		  </div>
 		  <div class="form-group">
 		    <label for="inputEmail3" class="col-sm-2 control-label">location</label>
 		    <div class="col-sm-10">
-		      <input type="text" class="form-control" name="loc" id="loc" placeholder="지역">
+		      <input type="text" class="form-control" name="loc" id="loc" value="${bean.loc }">
 		    </div>
 		  </div>
 		  <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
-		      <button type="submit" class="btn btn-default">입 력</button>
+		      <button type="submit" class="btn btn-default">수 정</button>
+		      <a href="delete.bit?idx=${bean.deptno }" class="btn btn-danger" role="btn">삭 제</a>
 		    </div>
 		  </div>
 		</form>
