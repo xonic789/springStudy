@@ -4,3 +4,5 @@ Servers/
 spring02/.settings/
 target/
 *.project
+/.recommenders/
+spring03/.settings/
