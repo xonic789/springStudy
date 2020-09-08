@@ -4,5 +4,8 @@ Servers/
 spring02/.settings/
 target/
 *.project
+<<<<<<< .merge_file_a17656
 /.recommenders/
+=======
+>>>>>>> .merge_file_a15884
 spring03/.settings/
