@@ -36,7 +36,7 @@
       <div class="row">
          <div class="col-md-12" id="content">
          <div class="page-header">
-         <h1>INSERT PAGE<small>DEPT TABLE${fieldErros.dname }</small></h1>
+         <h1>INSERT PAGE<small>DEPT TABLE${params.errors }</small></h1>
          </div>
          <form class="form-horizontal" action="insert.bit" method="post">
 		  <div class="form-group">

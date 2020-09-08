@@ -32,14 +32,14 @@ public class DeptDaoImpl extends JdbcDaoSupport implements DeptDao{
 
 	@Override
 	public DeptVo selectOne(int key) throws SQLException {
-		String sql="select * from dept where sabun=?";
+		String sql="select * from dept where deptno=?";
 		return getJdbcTemplate().queryForObject(sql, new Object[] {key},rowMapper);
 	}
 
 	@Override
 	public int updateOne(DeptVo bean) throws SQLException {
 		String sql="update dept set dname=?,loc=? where deptno=?";
-		return getJdbcTemplate().update(sql,new Object[] {bean.getDeptno(),bean.getLoc(),bean.getDeptno()});
+		return getJdbcTemplate().update(sql,new Object[] {bean.getDname(),bean.getLoc(),bean.getDeptno()});
 	}
 
 	@Override

@@ -11,6 +11,9 @@
 				<prop key="/dept/list.bit">deptList</prop>
 				<prop key="/dept/add.bit">deptAdd</prop>
 				<prop key="/dept/insert.bit">deptInsert</prop>
+				<prop key="/dept/detail.bit">deptOne</prop>
+				<prop key="/dept/update.bit">deptUpdate</prop>
+				<prop key="/dept/delete.bit">deptDelete</prop>
 			</props>
 		</property>
 	</bean>
@@ -25,8 +28,22 @@
 		<property name="viewName" value="dept/add"></property>
 	</bean>
 	<bean id="deptInsert" class="com.bit.framework.dept.controller.InsertController">
+		<property name="supportedMethods" value="POST"></property>
 		<property name="commandClass" value="com.bit.framework.dept.model.entity.DeptVo"></property>
 		<property name="commandName" value="bean"></property>
+		<property name="deptDao" ref="deptDao"></property>
+	</bean>
+
+	<bean id="deptOne" class="com.bit.framework.dept.controller.OneController">
+		<property name="deptDao" ref="deptDao"></property>
+	</bean>
+		<bean id="deptUpdate" class="com.bit.framework.dept.controller.UpdateController">
+		<property name="supportedMethods" value="POST"></property>
+		<property name="commandClass" value="com.bit.framework.dept.model.entity.DeptVo"></property>
+		<property name="commandName" value="bean"></property>
+		<property name="deptDao" ref="deptDao"></property>
+	</bean>
+	<bean id="deptDelete" class="com.bit.framework.dept.controller.DeleteController">
 		<property name="deptDao" ref="deptDao"></property>
 	</bean>
 	<bean id="viewResolver" 
