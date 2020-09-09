@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="consoleService" class="com.bit.framework.service.EngConsoleService"></bean>
+	
+	<!-- <bean id="module02" class="com.bit.framework.service.Module02">
+		<property name="console" ref="consoleService"></property>
+	</bean> -->
+	<!-- <bean id="module02" class="com.bit.framework.service.Module02" scope="singleton">
+		<constructor-arg ref="consoleService"></constructor-arg>
+	</bean> -->
+	
+	<bean id="module03" class="com.bit.framework.service.Module03">
+		<property name="sabun" value="1234"></property>
+		<property name="su2" value="3.14"></property>
+		<property name="name" value="abcd"></property>
+		<property name="tf" value="true"></property>
+		<property name="ch" value="@"></property>
+	</bean>
+</beans>
