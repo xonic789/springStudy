@@ -13,10 +13,15 @@ public class Module02 {
 		this.console = console;
 	}
 	
-	public void func01() {
+	public int func01() {
 		console.sayHello();
+		return 1234;
 	}
 	public void func02() {
-		console.sayHi();
+		int[] arr= {1,3,5,7,9};
+		for(int i=0;i<5;i++) {
+			System.out.print(arr[i]+":");
+			console.sayHi();
+		}
 	}
 }

@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 import com.bit.framework.service.ConsoleServiece;
-import com.bit.framework.service.Module04;
+import com.bit.framework.service.Module02;
 
 public class MainRun {
 	ConsoleServiece console;
@@ -30,11 +30,17 @@ public class MainRun {
 //		Module03 module = (Module03) ac.getBean("module03");
 //		System.out.println(module);
 		
-		Module04 module = (Module04)ac.getBean("module");
-		module.arrayShow();
-		module.listShow();
-		module.setShow();
-		module.mapShow();
+//		Module04 module = (Module04)ac.getBean("module");
+//		module.arrayShow();
+//		module.listShow();
+//		module.setShow();
+//		module.mapShow();
+		
+		Module02 module=(Module02)ac.getBean("proxyBean");
+		module.func01();
+		
+		module.func02();
+		
 	}
 
 }
