@@ -1,16 +1,10 @@
 package com.bit.framework.core;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 import com.bit.framework.service.ConsoleServiece;
-import com.bit.framework.service.EngConsoleService;
-import com.bit.framework.service.KorConsoleService;
-import com.bit.framework.service.Module01;
-import com.bit.framework.service.Module02;
-import com.bit.framework.service.Module03;
+import com.bit.framework.service.Module04;
 
 public class MainRun {
 	ConsoleServiece console;
@@ -33,9 +27,14 @@ public class MainRun {
 //		module.func01();
 //		module.func02();
 		
-		Module03 module = (Module03) ac.getBean("module03");
-		System.out.println(module);
+//		Module03 module = (Module03) ac.getBean("module03");
+//		System.out.println(module);
 		
+		Module04 module = (Module04)ac.getBean("module");
+		module.arrayShow();
+		module.listShow();
+		module.setShow();
+		module.mapShow();
 	}
 
 }

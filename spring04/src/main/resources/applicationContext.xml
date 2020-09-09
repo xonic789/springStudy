@@ -12,11 +12,66 @@
 		<constructor-arg ref="consoleService"></constructor-arg>
 	</bean> -->
 	
-	<bean id="module03" class="com.bit.framework.service.Module03">
+	<!-- <bean id="module03" class="com.bit.framework.service.Module03">
 		<property name="sabun" value="1234"></property>
 		<property name="su2" value="3.14"></property>
 		<property name="name" value="abcd"></property>
 		<property name="tf" value="true"></property>
 		<property name="ch" value="@"></property>
+	</bean> -->
+	
+	<bean id="module" class="com.bit.framework.service.Module04">
+		<property name="arr1">
+			<array>
+				<value>a</value>
+				<value>ab</value>
+				<value>abc</value>
+				<value>abcd</value>
+				<value>abcde</value>
+
+			</array>
+		</property>
+		<property name="list">
+			<list>
+				<value>A</value>
+				<value>AB</value>
+				<value>ABC</value>
+				<value>ABCD</value>
+				<value>ABCDE</value>
+
+			</list>
+		</property>
+		<property name="set">
+			<set>
+				<value>AAA</value>
+				<value>BBB</value>
+				<value>CCC</value>
+				<value>DDD</value>
+				<value>EEE</value>
+			</set>
+		</property>
+		<property name="map">
+			<props>
+				<prop key="KEY1">VAL1</prop>
+				<prop key="KEY2">VAL2</prop>
+				<prop key="KEY3">VAL3</prop>
+				<prop key="KEY4">VAL4</prop>
+			</props>
+			<!-- <map>
+				<entry key="key1">
+					<value>val1</value>
+				</entry>
+				<entry key="key2">
+					<value>val2</value>
+				</entry>
+				<entry key="key3">
+					<value>val3</value>
+				</entry>
+				<entry key="key4">
+					<value>val4</value>
+				</entry>
+			</map>		 -->
+			
+		</property>
 	</bean>
 </beans>
